@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Majd orfahli">
+    <meta name="description" content="a Syrian store sells original clothes brand">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OA Store online</title>
+    <style>
+        h1 {
+            background-color: rgb(0, 0, 0);
+             width: 100%;
+             height:100%;
+             padding-top: 60px;
+              text-align:center;
+               color: rgb(255, 255, 255);
+                font-size: xx-large;
+                 font-style: italic; 
+                  font-weight: bold; 
+                    border-radius: 15px;
+        }
+        h4 { color: rgb(0, 0, 0);
+             text-align: center; 
+             font-size: large; 
+             font-weight: bold;
+            }
+        a { color: rgba(0, 0, 0, 0.6); }
+        hr { width: 100%; height: 2px; background-color: black; border: none; }
+        
+        .input-field { 
+            width: 300px; 
+            height: 45px; 
+            border-radius: 30px; 
+            background-color: rgb(255, 255, 255); 
+            color: rgb(0, 0, 0); 
+            margin: 10px auto;   /* يخليهم بالنص */
+            display: block;      /* كل واحد بسطر */
+            text-align: center;  /* النص داخل الحقل بالنص */
+        }
+        .input-field:hover {
+            background-color: rgb(60, 58, 58);
+            color: white;
+            transition: all 0.4s ease-in-out;
+        }
+        input[type="submit"], input[type="reset"] {
+            background-color: rgb(255, 255, 255);
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: rgb(255, 255, 255);
+            color: rgba(0, 0, 0, 0.6);
+            transform: scale(1.1);
+            transition: all 0.4s ease-in-out;
+        }
+        body {
+            background-color: rgba(88, 86, 86, 0.53);
+            display: flex;
+            justify-content: center;   /* بالنص أفقياً */
+            align-items: center;       /* بالنص عمودياً */
+            height: 100vh;             /* ياخد طول الشاشة كامل */
+            flex-direction: column;    /* يخلي العناصر فوق بعض */
+        }
+        form {
+            text-align: center;        /* يخلي الحقول بالنص */
+        }
+        #click{
+            background-color: white;
+            color: black;
+            border-radius: 30px;
+            font-size: medium;
+            }
+            #click:hover{
+            background-color: black;
+            color: aliceblue;
+            transform: scale(1.1);
+            transition: all 0.4s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>OA Store</h1>
+    <hr>
+    <h2>Sign in</h2>
+
+    <!-- Form -->
+    <form action="Home.html" method="post">
+        <div>
+            <input id="email" type="email" placeholder="your email" required name="user" class="input-field">
+        </div>
+        <div>
+            <input id="password" type="password" placeholder="your password" required name="pass" class="input-field">
+        </div>
+        <div>
+            <input id="confirm-password" type="password" placeholder="confirm your password" required name="confpass" class="input-field">
+        </div>
+        <div>
+            <input id="birthdate" type="date" required name="date" class="input-field">
+        </div>
+        <div>
+           <a href="Home.html"><input id="submit-btn" type="submit" value="Send" class="input-field"></a>
+            <input id="reset-btn" type="reset" value="Reset your data" class="input-field">
+        </div>
+    </form>
+
+    <h4>Do you have an account?</h4>
+    <button id="click" onclick="location.href='login.html'">click here</button>
+</body>
+</html>

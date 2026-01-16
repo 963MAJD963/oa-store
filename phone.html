@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+h1,p{
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #333333;}
+input[type="tel"], input[type="text"] {
+  width: 60%;
+  position: flex;
+  width: 450px;
+border-radius: 25px;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+input[type="submit"] {
+  background-color: #4CAF50;
+  width: fit-content;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+input[type="submit"]:hover {
+  background-color: black;
+  transform: scale(1.1);
+}
+div{
+    text-align: center;
+    margin-top: 50px;
+}
+</style>
+<body>
+    <h1>Purchase Page</h1>
+    <p>This is where you can complete your purchase.</p>
+    <div>
+        <form action="/submit_purchase" method="post">
+    <input type="tel" placeholder="Enter your phone" required>
+    <br>
+    <input type="text" placeholder="Enter your shipping address" required>
+    <br>
+    <input type="submit" value="Submit Purchase" onclick="alert('تم تسجيل طلبك سيتواصل معك قسم المبيعات للتنسيق ')">
+        </form>    
+</div>
+</body>
+</html>

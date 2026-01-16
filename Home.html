@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الصفحة الرئيسية للمنتجات</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: linear-gradient(to bottom, #000000 10%, #ffffff 90%);
+      margin: 0;
+      padding: 0;
+    }
+
+    /* رأس الصفحة */
+    #head {
+      margin: auto;
+      padding: 10px;
+      background-color: #00000000;
+      border-radius: 10px;
+      text-align: center;
+      color: white;
+    }
+    #head h1, #head h2 {
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    /* قائمة روابط */
+    ul#list {
+      max-height:0;
+      opacity: 0;
+      overflow: hidden;
+      background-color: #4c4c4caa;
+      padding: 10px;
+      width: fit-content;
+      border-radius: 25px;
+      box-shadow: #000 0px 0px 10px;
+      margin: 10px auto;
+      position: fixed;
+      top: 60px;
+      right: 20px;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+    }
+    ul#list:hover {
+      transition: ease 0.3s;
+      background-color: #00000068;
+    }
+    ul#list li a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      margin: 0 15px;
+      transition: ease 0.3s;
+    }
+    ul#list li a:hover {
+      color: rgb(95, 92, 92);
+    }
+
+    /* إظهار القائمة عند الضغط */
+    #menubut:checked ~ ul#list {
+      opacity: 1;
+      max-height: 600px;
+    }
+
+    /* إخفاء الـ checkbox */
+    #menubut {
+      display: none;
+    }
+
+    /* شكل زر القائمة */
+    .menu-btn {
+      top: 10px;
+      right: 10px;
+      position: fixed;
+      padding: 8px 12px;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      border-radius: 4px;
+      font-size: 20px;
+    }
+
+    /* شعار */
+    #logo {
+      border-radius: 50px;
+      height: 100px;
+      width: 100px;
+      box-shadow: #000 0px 0px 10px;
+      position: fixed;
+    }
+
+    /* أزرار الماركات */
+    #buttons {
+      text-align: center;
+      margin: 20px;
+      padding: 25px;
+    }
+    input[type="button"] {
+      background-color: #ffffffaa;
+      color: #000000;
+      border-radius: 25px;
+      padding: 12px 24px;
+      font-size: 18px;
+      margin: 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    input[type="button"]:hover {
+      background-color: #ffffff;
+      transform: scale(1.1);
+    }
+
+    /* قسم المنتجات */
+    #nike {
+      text-align: center;
+      margin: 40px auto;
+      max-width: 1000px;
+    }
+    /* كل منتج */
+    figure.product {
+      border-radius: 25px;
+      margin: 30px auto;
+      text-align: center;
+      width: 300px;
+      background: #f9f9f9;
+      padding: 15px;
+    }
+    figure.product:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      background-color: #ffffffa1;
+      transform: translateY(-15px);
+      transition: all 0.3s ease;
+    }
+    figure.product img {
+      width: 100%;
+      border-radius: 15px;
+    }
+    figure.product figcaption {
+      background: #ffffff75;
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    figure.product button {
+      display: block;
+      margin: 15px auto 0;
+      padding: 10px 20px;
+      border-radius: 25px;
+      background-color: green;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    figure.product button:hover {
+      background-color: darkgreen;
+      transform: scale(1.05);
+    }
+
+    /* ترتيب المنتجات بجانب بعض */
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- شعار وروابط -->
+  <a href="https://www.instagram.com/oa_store_1/">
+    <img id="logo" src="logo.jpg" alt="oa store logo">
+  </a>
+
+  <div id="head">
+    <h1>مرحباً بك في صفحة المنتجات</h1>
+    <h2>اختر الماركة التي تود استكشاف منتجاتها</h2>
+    <input type="checkbox" id="menubut">
+    <label for="menubut" class="menu-btn">≡ القائمة</label>
+    <ul id="list">
+      <li><a href="login.html">تسجيل الدخول</a></li>
+      <li><a href="about.html">من نحن</a></li>
+    </ul>
+  </div>
+
+  <!-- قسم المنتجات -->
+  <div class="products-container">
+
+    <!-- المنتج الأول -->
+    <figure class="product">
+      <img src="blue hodie.avif" alt="blue hoodie">
+      <figcaption>
+        Blue Hoodie with many sizes, delivery to all Syria<br>
+        لون أزرق مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
+        Price: 50$
+      </figcaption>
+      <button onclick="location.href='phone.html'">شراء الآن</button>
+    </figure>
+
+    <!-- المنتج الثاني -->
+    <figure class="product">
+      <img src="green hoodie.avif" alt="green hoodie">
+      <figcaption>
+        Green Hoodie with many sizes, delivery to all Syria<br>
+        لون أخضر مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
+        Price: 60$
+      </figcaption>
+      <button onclick="location.href='phone.html'">شراء الآن</button>
+    </figure>
+
+    <!-- المنتج الثالث -->
+    <figure class="product">
+      <img src="grey hhodie.avif" alt="grey hoodie">
+      <figcaption>
+        Grey Hoodie with many sizes, delivery to all Syria<br>
+        لون رمادي مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
+        Price: 70$
+      </figcaption>
+      <button onclick="location.href='phone.html'">شراء الآن</button>
+    </figure>
+
+  </div>
+
+</body>
+</html>
