@@ -8,6 +8,7 @@
     body {
       font-family: system-ui, sans-serif;
       background: linear-gradient(to bottom, #000000 10%, #ffffff 90%);
+      background-repeat: no-repeat;
       margin: 0;
       padding: 0;
     }
@@ -138,6 +139,7 @@
       width: 100%;
       border-radius: 15px;
     }
+    
     figure.product figcaption {
       background: #ffffff75;
       border-radius: 15px;
@@ -168,6 +170,11 @@
       justify-content: center;
       gap: 20px;
     }
+    #photobut{
+      margin: 0;
+      padding: 0;
+      background-color: white;
+    }
   </style>
 </head>
 <body>
@@ -193,7 +200,9 @@
 
     <!-- المنتج الأول -->
     <figure class="product">
-      <img src="blue hodie.avif" alt="blue hoodie">
+      <button type="button" id="photobut" ondblclick="location.href='blue hodie.avif'">
+      <img src="blue hodie.avif" alt="blue hoodie" id="photo">
+      </button>
       <figcaption>
         Blue Hoodie with many sizes, delivery to all Syria<br>
         لون أزرق مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
@@ -201,10 +210,11 @@
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
-
     <!-- المنتج الثاني -->
     <figure class="product">
+      <button type="button" id="photobut" ondblclick="location.href='green hoodie.avif'">
       <img src="green hoodie.avif" alt="green hoodie">
+      </button>
       <figcaption>
         Green Hoodie with many sizes, delivery to all Syria<br>
         لون أخضر مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
@@ -215,7 +225,9 @@
 
     <!-- المنتج الثالث -->
     <figure class="product">
+      <button type="button" id="photobut" ondblclick="location.href='grey hhodie.avif'">
       <img src="grey hhodie.avif" alt="grey hoodie">
+      </button>
       <figcaption>
         Grey Hoodie with many sizes, delivery to all Syria<br>
         لون رمادي مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
