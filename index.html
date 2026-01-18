@@ -3,230 +3,227 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>الصفحة الرئيسية للمنتجات</title>
+  <title>متجر OA - المنتجات</title>
   <style>
     body {
-      font-family: system-ui, sans-serif;
-      background: linear-gradient(to bottom, #000000 10%, #ffffff 90%);
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(to bottom, #111 10%, #f5f5f5 90%);
       margin: 0;
-      padding: 0;
+      padding-top: 70px;
+      color: #333;
     }
 
-    /* رأس الصفحة */
-    #head {
-      margin: auto;
-      padding: 30px;
-      border-radius: 10px;
-      text-align: center;
+    /* الشريط العلوي */
+    #top-bar {
+      position: sticky;
+      top: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      height: 120px;
+      background: rgba(0, 0, 0, 0); /* خلفية شبه شفافة */
+      z-index: 1000;
+    }
+
+    /* الشعار */
+    #logo {
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+
+    /* زر القائمة */
+    .menu-btn {
+      padding: 10px 16px;
+      background: #007bff;
       color: white;
-      position: relative;
-      top: 50px;
+      cursor: pointer;
+      border-radius: 6px;
+      font-size: 18px;
+      border: none;
+      transition: background 0.3s ease;
     }
-    #head h1, #head h2 {
-      font-weight: bold;
-      margin: 10px 0;
+    .menu-btn:hover {
+      background: #0056b3;
     }
 
-    /* قائمة روابط */
+    /* إخفاء الـ checkbox */
+    #menubut { display: none; }
+
+    /* القائمة المنسدلة */
     ul#list {
-      max-height:0;
+      position: absolute;
+      top: 70px;
+      right: 40px;
+      max-height: 0;
       opacity: 0;
       overflow: hidden;
-      background-color: #4c4c4caa;
+      background-color: rgba(0,0,0,0.8);
       padding: 10px;
-      width: fit-content;
-      border-radius: 25px;
-      box-shadow: #000 0px 0px 10px;
-      margin: 10px auto;
-      position: fixed;
-      top: 60px;
-      right: 20px;
-      transition: max-height 0.5s ease, opacity 0.5s ease;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: max-height 0.35s ease, opacity 0.35s ease;
+      z-index: 1000;
     }
-    ul#list:hover {
-      background-color: #00000068;
+    ul#list li {
+      list-style: none;
+      margin: 8px 0;
     }
     ul#list li a {
       text-decoration: none;
       color: white;
-      font-size: 20px;
-      margin: 0 15px;
-      transition: ease 0.3s;
+      font-size: 16px;
+      padding: 6px 12px;
+      display: block;
+      border-radius: 6px;
+      transition: background 0.3s ease;
     }
     ul#list li a:hover {
-      color: rgb(95, 92, 92);
+      background: rgba(255,255,255,0.2);
     }
-
-    /* إظهار القائمة عند الضغط */
     #menubut:checked ~ ul#list {
       opacity: 1;
-      max-height: 600px;
+      max-height: 300px;
     }
 
-    /* إخفاء الـ checkbox */
-    #menubut {
-      display: none;
-    }
-
-    /* شكل زر القائمة */
-    .menu-btn {
-      top: 10px;
-      right: 10px;
-      position: fixed;
-      padding: 8px 12px;
-      background: #007bff;
-      color: white;
-      cursor: pointer;
-      border-radius: 4px;
-      font-size: 20px;
-    }
-
-    /* شعار */
-    #logo {
-      border-radius: 50px;
-      height: 100px;
-      width: 100px;
-      box-shadow: #000 0px 0px 10px;
-      position: fixed;
-    }
-
-    /* قسم المنتجات */
-    figure.product {
-      border-radius: 25px;
-      margin: 30px auto;
+    /* العنوان */
+    #head {
       text-align: center;
-      width: 300px;
-      background: #f9f9f9;
-      padding: 15px;
+      color: white;
+      background: transparent;
+      margin: 30px 0;
+    }
+    #welcome { margin: 0; font-size: 28px; font-weight: 700; }
+    #second { margin: 10px 0 0; font-size: 20px; font-weight: 500; }
+
+    /* المنتجات */
+    .products-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
+    }
+    figure.product {
+      border-radius: 16px;
+      text-align: center;
+      width: 280px;
+      background: #fff;
+      padding: 16px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     figure.product:hover {
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-      background-color: #ffffffa1;
-      transform: translateY(-15px);
-      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+      transform: translateY(-8px);
     }
     figure.product img {
       width: 100%;
-      border-radius: 15px;
+      border-radius: 12px;
     }
     figure.product figcaption {
-      background: #ffffff75;
-      border-radius: 15px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 12px;
       padding: 10px;
       margin-top: 10px;
+      font-size: 15px;
+      line-height: 1.6;
     }
     figure.product button {
       display: block;
-      margin: 15px auto 0;
-      padding: 10px 20px;
-      border-radius: 25px;
+      margin: 14px auto 0;
+      padding: 10px 18px;
+      border-radius: 20px;
       background-color: green;
       color: white;
       font-size: 16px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: transform 0.2s ease, background-color 0.2s ease;
       border: none;
     }
     figure.product button:hover {
       background-color: darkgreen;
       transform: scale(1.05);
     }
-
-    /* ترتيب المنتجات بجانب بعض */
-    .products-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
   </style>
 </head>
 <body>
-
-  <!-- شعار وروابط -->
-  <a href="https://www.instagram.com/oa_store_1/">
-    <img id="logo" src="logo.jpg" alt="oa store logo">
-  </a>
-
-  <div id="head">
-    <h1>مرحباً بك في صفحة المنتجات</h1>
-    <h2>المتوفر حاليا ضمن متجرنا</h2>
-    <input type="checkbox" id="menubut">
-    <label for="menubut" class="menu-btn">≡ القائمة</label>
-    <ul id="list">
-      <li><a href="login.html">تسجيل الدخول</a></li>
-      <li><a href="about.html">من نحن</a></li>
-    </ul>
+  <!-- الشريط العلوي -->
+  <div id="top-bar">
+    <a href="https://www.instagram.com/oa_store_1/">
+      <img id="logo" src="logo.jpg" alt="oa store logo">
+    </a>
+    <div>
+      <input type="checkbox" id="menubut">
+      <label for="menubut" class="menu-btn">≡ القائمة</label>
+      <ul id="list">
+        <li><a href="login.html">تسجيل الدخول</a></li>
+        <li><a href="about.html">من نحن</a></li>
+      </ul>
+    </div>
   </div>
 
-  <!-- قسم المنتجات -->
-  <div class="products-container"> <!--  حاوية المنتجات بالصف الاول -->
+  <!-- العنوان -->
+  <div id="head">
+    <h1 id="welcome">مرحباً بك في صفحة المنتجات</h1>
+    <h2 id="second">المتوفر حاليا ضمن متجرنا</h2>
+  </div>
 
-    <!-- المنتج الأول -->
+  <!-- المنتجات -->
+  <div class="products-container">
     <figure class="product">
       <img src="white.jpeg" alt="white jack">
       <figcaption>
-      Nike double white face 
-      <br>
-      S-M-L-XL
-      <br>
-      Made in turkey 
-             <br>
+        Nike double white face <br>
+        S-M-L-XL <br>
+        Made in turkey <br>
         Price: 43$
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
 
-    <!-- المنتج الثاني -->
     <figure class="product">
       <img src="black.jpeg" alt="black jack">
       <figcaption>
-        Nike double white face 
-      <br>
-      S-M-L-XL
-      <br>
-      Made in turkey 
-             <br>
+        Nike double white face <br>
+        S-M-L-XL <br>
+        Made in turkey <br>
         Price: 43$
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
 
-    <!-- المنتج الثالث -->
     <figure class="product">
-      <img src="black neon.jpeg" alt="black jack">
+      <img src="black neon.jpeg" alt="black neon jack">
       <figcaption>
-        Nike double white face 
-      <br>
-      S-M-L-XL
-      <br>
-      Made in turkey 
-             <br>
+        Nike double white face <br>
+        S-M-L-XL <br>
+        Made in turkey <br>
         Price: 43$
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
-  </div>
-  <div class="products-container"> <!--  حاوية المنتجات بالصف الثاني -->
-    <!-- المنتج الرابع -->
-     <figure class="product">
+
+    <figure class="product">
       <img src="white black.jpeg" alt="white/black jack">
       <figcaption>
         Nike <br>
         S-M-L-XL <br>
         Made in china <br>
-        Price:43$
+        Price: 43$
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
-    <!-- المنتج الخامس -->
-     <figure class="product">
-     <img src="grey.jpeg" alt="grey jack">
+
+    <figure class="product">
+      <img src="grey.jpeg" alt="grey jack">
       <figcaption>
-         Nike <br>
+        Nike <br>
         S-M-L-XL <br>
         Made in china <br>
-        Price:43$
+        Price: 43$
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
