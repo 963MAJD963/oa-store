@@ -8,7 +8,6 @@
     body {
       font-family: system-ui, sans-serif;
       background: linear-gradient(to bottom, #000000 10%, #ffffff 90%);
-      background-repeat: no-repeat;
       margin: 0;
       padding: 0;
     }
@@ -17,7 +16,6 @@
     #head {
       margin: auto;
       padding: 30px;
-      background-color: #00000000;
       border-radius: 10px;
       text-align: center;
       color: white;
@@ -46,7 +44,6 @@
       transition: max-height 0.5s ease, opacity 0.5s ease;
     }
     ul#list:hover {
-      transition: ease 0.3s;
       background-color: #00000068;
     }
     ul#list li a {
@@ -93,34 +90,7 @@
       position: fixed;
     }
 
-    /* أزرار الماركات */
-    #buttons {
-      text-align: center;
-      margin: 20px;
-      padding: 25px;
-    }
-    input[type="button"] {
-      background-color: #ffffffaa;
-      color: #000000;
-      border-radius: 25px;
-      padding: 12px 24px;
-      font-size: 18px;
-      margin: 15px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    input[type="button"]:hover {
-      background-color: #ffffff;
-      transform: scale(1.1);
-    }
-
     /* قسم المنتجات */
-    #nike {
-      text-align: center;
-      margin: 40px auto;
-      max-width: 1000px;
-    }
-    /* كل منتج */
     figure.product {
       border-radius: 25px;
       margin: 30px auto;
@@ -139,7 +109,6 @@
       width: 100%;
       border-radius: 15px;
     }
-    
     figure.product figcaption {
       background: #ffffff75;
       border-radius: 15px;
@@ -170,11 +139,6 @@
       justify-content: center;
       gap: 20px;
     }
-    #photobut{
-      margin: 0;
-      padding: 0;
-      background-color: white;
-    }
   </style>
 </head>
 <body>
@@ -196,47 +160,76 @@
   </div>
 
   <!-- قسم المنتجات -->
-  <div class="products-container">
+  <div class="products-container"> <!--  حاوية المنتجات بالصف الاول -->
 
     <!-- المنتج الأول -->
     <figure class="product">
-      <button type="button" id="photobut" ondblclick="location.href='blue hodie.avif'">
-      <img src="blue hodie.avif" alt="blue hoodie" id="photo">
-      </button>
+      <img src="white.jpeg" alt="white jack">
       <figcaption>
-        Blue Hoodie with many sizes, delivery to all Syria<br>
-        لون أزرق مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
-        Price: 50$
+      Nike double white face 
+      <br>
+      S-M-L-XL
+      <br>
+      Made in turkey 
+             <br>
+        Price: 43$
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
+
     <!-- المنتج الثاني -->
     <figure class="product">
-      <button type="button" id="photobut" ondblclick="location.href='green hoodie.avif'">
-      <img src="green hoodie.avif" alt="green hoodie">
-      </button>
+      <img src="black.jpeg" alt="black jack">
       <figcaption>
-        Green Hoodie with many sizes, delivery to all Syria<br>
-        لون أخضر مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
-        Price: 60$
+        Nike double white face 
+      <br>
+      S-M-L-XL
+      <br>
+      Made in turkey 
+             <br>
+        Price: 43$
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
 
     <!-- المنتج الثالث -->
     <figure class="product">
-      <button type="button" id="photobut" ondblclick="location.href='grey hhodie.avif'">
-      <img src="grey hhodie.avif" alt="grey hoodie">
-      </button>
+      <img src="black neon.jpeg" alt="black jack">
       <figcaption>
-        Grey Hoodie with many sizes, delivery to all Syria<br>
-        لون رمادي مع طاقية قابلة للتوصيل لجميع سوريا متوفر عدة قياسات<br>
-        Price: 70$
+        Nike double white face 
+      <br>
+      S-M-L-XL
+      <br>
+      Made in turkey 
+             <br>
+        Price: 43$
       </figcaption>
       <button onclick="location.href='phone.html'">شراء الآن</button>
     </figure>
-
   </div>
-
+  <div class="products-container"> <!--  حاوية المنتجات بالصف الثاني -->
+    <!-- المنتج الرابع -->
+     <figure class="product">
+      <img src="white black.jpeg" alt="white/black jack">
+      <figcaption>
+        Nike <br>
+        S-M-L-XL <br>
+        Made in china <br>
+        Price:43$
+      </figcaption>
+      <button onclick="location.href='phone.html'">شراء الآن</button>
+    </figure>
+    <!-- المنتج الخامس -->
+     <figure class="product">
+     <img src="grey.jpeg" alt="grey jack">
+      <figcaption>
+         Nike <br>
+        S-M-L-XL <br>
+        Made in china <br>
+        Price:43$
+      </figcaption>
+      <button onclick="location.href='phone.html'">شراء الآن</button>
+    </figure>
+  </div>
 </body>
 </html>
