@@ -9,13 +9,16 @@
       margin: 0;
       padding: 0;
       font-family: "Segoe UI", Tahoma, sans-serif;
-      background: linear-gradient(to bottom, #111, #333);
+      background-color:black;
       display: flex;
       flex-direction: column;
       align-items: center;
-      color: #333;
+      animation-name: back;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
-
+    
     /* زر الهوم */
     #home {
       position: absolute;   /* يظل ثابت فوق يمين */
@@ -34,9 +37,24 @@
       margin: 40px 0 10px;
       color: white;
       font-size: 40px;
-      letter-spacing: 2px;
+      font-weight: 700;
+      letter-spacing: 4px;
       text-transform: uppercase;
       text-align: center;
+       animation-name: head;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+      animation-direction: alternate;
+    }
+    @keyframes head{
+      from{
+        transform: translateY(-100px);
+      }
+      to{
+        transform: translateY(0);
+      }
+
+
     }
 
     h2 {
@@ -49,6 +67,23 @@
       border-radius: 12px;
       padding: 5px 15px;
       margin-bottom: 1px;
+      animation-name: jack;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
+      animation-direction: alternate;
+      animation-play-state: running;
+  }
+  @keyframes jack{
+    from{
+      background-color: rgba(0, 0, 0, 0);
+      width: 100%;
+
+    }
+    to{
+      background: rgba(0, 0, 0, 0);
+      width: 8%;
+    }
+
   }
 
     /* المنتجات */
@@ -62,19 +97,31 @@
       padding: 20px;
       width: 80%;
       max-width: 1200px;
+       animation-name: back;
+      animation-duration: 7s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
     }
-
+    @keyframes back{
+      from{
+        background-color: #111;
+      }
+      to{
+        background-color: #777;
+      }
+    }
     figure.product {
+      cursor: pointer;
       border-radius: 16px;
       text-align: center;
       width: 280px;
-      background: #fff;
+      background:linear-gradient(#333,black);
       padding: 16px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.067);
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     figure.product:hover {
-      box-shadow: 0 0 20px rgba(0,0,0,0.25);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.473);
       transform: translateY(-8px);
     }
     figure.product img {
@@ -82,7 +129,8 @@
       border-radius: 12px;
     }
     figure.product figcaption {
-      background: rgba(0,0,0,0.05);
+      background: rgba(2, 2, 2, 0);
+      color: white;
       border-radius: 12px;
       padding: 10px;
       margin-top: 10px;
@@ -100,28 +148,40 @@
       transition: transform 0.2s ease, background-color 0.2s ease;
       border: none;
       width: 100%;
+      animation-name: button;
+      animation-iteration-count: infinite;
+      animation-duration: 500ms;
+      animation-direction: alternate;
     }
     figure.product button:hover {
       background-color: darkgreen;
       transform: scale(1.05);
     }
+    @keyframes button {
+      0%{
+      transform:rotate(3deg)
+      }
+      100%{
+      transform:rotate(-3deg)
+      }
+    }
 
     p.zoom {
-      font-size: 12px;
-      color: #555;
+      font-size: 15px;
+      color: #ffffff;
       margin: 5px 0;
     }
   </style>
 </head>
 <body>
   <!-- زر الهوم -->
-  <button id="home" onclick="location.href='home.html'">
+  <button id="home" onclick="location.href='index.html'">
     <img src="home.png" alt="Home">
   </button>
 
   <!-- العنوان -->
   <h1>OA Store</h1>
-  <h2>Jackets</h2>
+  <h2>Jackets❄️</h2>
 
   <!-- المنتجات -->
   <div class="products-container">
