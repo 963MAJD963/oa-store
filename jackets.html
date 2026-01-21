@@ -17,6 +17,7 @@
       animation-duration: 8s;
       animation-iteration-count: infinite;
       animation-direction: alternate;
+      overflow: hidden ;
     }
     
     /* زر الهوم */
@@ -27,11 +28,28 @@
       border: none;
       background: none;
       cursor: pointer;
+      
     }
-    #home img {
-      width: 30px;
-    }
+    #home {
+      color: white;
+      letter-spacing: 2px;
+      font-size: 20px;
+      margin-right: 10px;
+      animation-name: home;
+      animation-duration: 3s;
+      animation-iteration-count: 1;
 
+    }
+    @keyframes home{
+      from{
+        transform: translateX(225%);
+
+      }
+      to{
+        transform: translateX(0%);
+      }
+
+    }
     /* العنوان */
     h1 {
       margin: 40px 0 10px;
@@ -48,10 +66,10 @@
     }
     @keyframes head{
       from{
-        transform: translateY(-100px);
+        transform: translateY(-200%);
       }
       to{
-        transform: translateY(0);
+        transform: translateY(0%);
       }
 
 
@@ -63,25 +81,24 @@
       color: white;
       font-size: 22px;
       letter-spacing: 2px;
-      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 12px;
       padding: 5px 15px;
       margin-bottom: 1px;
       animation-name: jack;
       animation-duration: 3s;
       animation-iteration-count: 1;
-      animation-direction: alternate;
+      animation-direction:alternate;
       animation-play-state: running;
   }
   @keyframes jack{
     from{
-      background-color: rgba(0, 0, 0, 0);
-      width: 100%;
+      transform: translateX(-100%);
+      opacity: 0;
 
     }
     to{
-      background: rgba(0, 0, 0, 0);
-      width: 8%;
+      transform: translateX(0%);
+      opacity: 100%;
     }
 
   }
@@ -174,15 +191,12 @@
   </style>
 </head>
 <body>
-  <!-- زر الهوم -->
-  <button id="home" onclick="location.href='index.html'">
-    <img src="home.png" alt="Home">
-  </button>
-
   <!-- العنوان -->
   <h1>OA Store</h1>
   <h2>Jackets❄️</h2>
-
+  <button id="home" onclick="location.href='index.html'">
+    HOME
+  </button>
   <!-- المنتجات -->
   <div class="products-container">
     <figure class="product">
