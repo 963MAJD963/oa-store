@@ -21,18 +21,28 @@
 
     #head {
       display: flex;
+      position: relative;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-      margin: 20px;
-      padding: 20px;
+      margin: 30px;
+      padding: 40px;
       background-color: #222;
       border-radius: 25px;
-      width: 100% auto;
+      width: auto;
+      gap: 25px;
     }
 
     #head h1 {
-      color: white;
+      color: rgba(255, 0, 0, 0.56);
       margin: 0;
+      font-family: sans;
+      font-size: 56px;
+    }
+    #head span{
+      color: white;
+      font-weight: 700;
+      font-family: sans;
     }
     nav ul {
       display: flex;
@@ -42,6 +52,8 @@
       padding: 0;
       flex-wrap: wrap;
       width: auto;
+      letter-spacing: 7px;
+      font-weight: 500;;
     }
 
     nav ul li a {
@@ -104,11 +116,19 @@
     .image-box img {
       height: 300px;
     }
+    h6{
+      position:relative;
+      text-transform: uppercase;
+      color: #555;
+      text-align: center;
+      letter-spacing: 1px;
+      bottom: 1px;
+    }
   </style>
 </head>
 <body>
   <div id="head">
-    <h1>OASTORE</h1>
+    <h1>OA <span> Store </span></h1>
     <nav>
       <ul>
         <li><a href="jackets.html">Jackets</a></li>
@@ -129,5 +149,6 @@
       <img src="nike.png" alt="Nike product">
     </div>
   </div>
+  <h6>devloped by majd orfahli 2026</h6>
 </body>
 </html>
